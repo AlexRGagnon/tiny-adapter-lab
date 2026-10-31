@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "tiny-adapter-lab"
+version = "0.1.0"
+description = "Local causal-transformer training and auditable low-rank adaptation experiments"
+requires-python = ">=3.11"
+dependencies = ["torch>=2.6,<3"]
+license = "MIT"
+[project.scripts]
+tiny-adapter-lab = "tiny_adapter_lab.experiment:main"
+[tool.setuptools.packages.find]
+where = ["src"]

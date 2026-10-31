@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-31T00:54:20.344951+00:00",
+  "task": "synthetic digit triples: base copy-last -> adaptation copy-first",
+  "seed": 17,
+  "device": "cuda",
+  "python": "3.13.3",
+  "torch": "2.11.0+cu128",
+  "config": {
+    "vocab_size": 11,
+    "context": 4,
+    "width": 32,
+    "heads": 4,
+    "layers": 2
+  },
+  "base_sha256": "238ed3751279588074a3e1c3f750069c6b06588704b01d572e0d8c32fcd94c57",
+  "split_sha256": "3e9e1a3d360951c805ac4e61bd19829792a66e808b54718b4377850f2a469bfb",
+  "split_counts": {
+    "train": 800,
+    "validation": 100,
+    "test": 100
+  },
+  "base_parameters": 26315,
+  "adapter_layers": [
+    "blocks.0.attn.qkv",
+    "blocks.0.attn.proj",
+    "blocks.1.attn.qkv",
+    "blocks.1.attn.proj",
+    "head"
+  ],
+  "training": {
+    "base": {
+      "best_step": 200,
+      "validation_history": [
+        {
+          "step": 20,
+          "n": 100,
+          "loss_nats": 0.436259925365448,
+          "accuracy": 1.0
+        },
+        {
+          "step": 40,
+          "n": 100,
+          "loss_nats": 0.0786968544125557,
+          "accuracy": 1.0
+        },
+        {
+          "step": 60,
+          "n": 100,
+          "loss_nats": 0.02902105264365673,
+          "accuracy": 1.0
+        },
+        {
+          "step": 80,
+          "n": 100,
+          "loss_nats": 0.016768701374530792,
+          "accuracy": 1.0
+        },
+        {
+          "step": 100,
+          "n": 100,
+          "loss_nats": 0.011710665188729763,
+          "accuracy": 1.0
+        },
+        {
+          "step": 120,
+          "n": 100,
+          "loss_nats": 0.008835780434310436,
+          "accuracy": 1.0
+        },
+        {
+          "step": 140,
+          "n": 100,
+          "loss_nats": 0.006957644131034613,
+          "accuracy": 1.0
+        },
+        {
+          "step": 160,
+          "n": 100,
+          "loss_nats": 0.0056453365832567215,
+          "accuracy": 1.0
+        },
+        {
+          "step": 180,
+          "n": 100,
+          "loss_nats": 0.0046786293387413025,
+          "accuracy": 1.0
+        },
+        {
+          "step": 200,
+          "n": 100,
+          "loss_nats": 0.003948209807276726,
+          "accuracy": 1.0
+        }
+      ],
+      "elapsed_seconds": 1.6029190002009273,
+      "steps": 200,
+      "lr": 0.003,
+      "trainable_parameters": 26315
+    },
+    "lora": {
+      "best_step": 200,
+      "validation_history": [
+        {
+          "step": 20,
+          "n": 100,
+          "loss_nats": 3.097054958343506,
+          "accuracy": 0.12999999523162842
+        },
+        {
+          "step": 40,
+          "n": 100,
+          "loss_nats": 0.9826693534851074,
+          "accuracy": 0.7099999785423279
+        },
+        {
+          "step": 60,
+          "n": 100,
+          "loss_nats": 0.10563503950834274,
+          "accuracy": 1.0
+        },
+        {
+          "step": 80,
+          "n": 100,
+          "loss_nats": 0.022920651361346245,
+          "accuracy": 1.0
+        },
+        {
+          "step": 100,
+          "n": 100,
+          "loss_nats": 0.01288122683763504,
+          "accuracy": 1.0
+        },
+        {
+          "step": 120,
+          "n": 100,
+          "loss_nats": 0.009561167098581791,
+          "accuracy": 1.0
+        },
+        {
+          "step": 140,
+          "n": 100,
+          "loss_nats": 0.007681542541831732,
+          "accuracy": 1.0
+        },
+        {
+          "step": 160,
+          "n": 100,
+          "loss_nats": 0.006522101815789938,
+          "accuracy": 1.0
+        },
+        {
+          "step": 180,
+          "n": 100,
+          "loss_nats": 0.005645526573061943,
+          "accuracy": 1.0
+        },
+        {
+          "step": 200,
+          "n": 100,
+          "loss_nats": 0.004958582576364279,
+          "accuracy": 1.0
+        }
+      ],
+      "elapsed_seconds": 1.0280170999467373,
+      "steps": 200,
+      "lr": 0.005,
+      "trainable_parameters": 1708
+    },
+    "full_finetune": {
+      "best_step": 200,
+      "validation_history": [
+        {
+          "step": 20,
+          "n": 100,
+          "loss_nats": 3.1320648193359375,
+          "accuracy": 0.1599999964237213
+        },
+        {
+          "step": 40,
+          "n": 100,
+          "loss_nats": 0.549761176109314,
+          "accuracy": 0.8799999952316284
+        },
+        {
+          "step": 60,
+          "n": 100,
+          "loss_nats": 0.032652195543050766,
+          "accuracy": 1.0
+        },
+        {
+          "step": 80,
+          "n": 100,
+          "loss_nats": 0.01602778024971485,
+          "accuracy": 1.0
+        },
+        {
+          "step": 100,
+          "n": 100,
+          "loss_nats": 0.01137620210647583,
+          "accuracy": 1.0
+        },
+        {
+          "step": 120,
+          "n": 100,
+          "loss_nats": 0.00925892498344183,
+          "accuracy": 1.0
+        },
+        {
+          "step": 140,
+          "n": 100,
+          "loss_nats": 0.007956855930387974,
+          "accuracy": 1.0
+        },
+        {
+          "step": 160,
+          "n": 100,
+          "loss_nats": 0.007013510912656784,
+          "accuracy": 1.0
+        },
+        {
+          "step": 180,
+          "n": 100,
+          "loss_nats": 0.0062780436128377914,
+          "accuracy": 1.0
+        },
+        {
+          "step": 200,
+          "n": 100,
+          "loss_nats": 0.005679341498762369,
+          "accuracy": 1.0
+        }
+      ],
+      "elapsed_seconds": 1.11619389988482,
+      "steps": 200,
+      "lr": 0.001,
+      "trainable_parameters": 26315
+    }
+  },
+  "metrics": {
+    "frozen_base": {
+      "source_test": {
+        "n": 100,
+        "loss_nats": 0.0038908077403903008,
+        "accuracy": 1.0
+      },
+      "target_test": {
+        "n": 100,
+        "loss_nats": 7.165255069732666,
+        "accuracy": 0.09999999403953552
+      }
+    },
+    "lora": {
+      "source_test": {
+        "n": 100,
+        "loss_nats": 6.710943698883057,
+        "accuracy": 0.09999999403953552
+      },
+      "target_test": {
+        "n": 100,
+        "loss_nats": 0.004825284704566002,
+        "accuracy": 1.0
+      }
+    },
+    "full_finetune": {
+      "source_test": {
+        "n": 100,
+        "loss_nats": 6.408939361572266,
+        "accuracy": 0.09999999403953552
+      },
+      "target_test": {
+        "n": 100,
+        "loss_nats": 0.005587688181549311,
+        "accuracy": 1.0
+      }
+    }
+  },
+  "merged_max_abs_error": 2.7418136596679688e-06,
+  "base_unchanged": true,
+  "adapter_reload_verified": true,
+  "limitations": [
+    "Single-seed synthetic task, not a language-model capability benchmark.",
+    "Timings include validation/checkpoint selection, not controlled speed comparisons.",
+    "Different fixed learning rates; no claim of optimal hyperparameter comparison."
+  ]
+}
